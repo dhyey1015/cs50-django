@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return render(request, "templates/index.html")
+    return render(request, "hello/index.html")
 
 def dhyey(request):
     return HttpResponse("hello! dhyey")
