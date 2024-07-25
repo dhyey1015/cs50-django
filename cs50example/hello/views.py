@@ -13,4 +13,4 @@ def greet(request, name):
     context = {
         "name": name
     }
-    return render(request, "hello/greet.html")
+    return render(request, "hello/greet.html",context)
