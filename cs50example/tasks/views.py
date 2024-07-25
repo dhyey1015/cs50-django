@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 
-tasks = ["foo", "bar", "baz"]
+tasks = ['foo', 'bar', 'baz']
 # Create your views here.
 
 def index(request):
@@ -9,4 +9,7 @@ def index(request):
         'tasks':tasks
     }
     return render(request, "tasks/index.html",context)
+
+def add(request):
+    return render(request, "tasks/add.html")
     
