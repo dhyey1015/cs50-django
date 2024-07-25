@@ -9,4 +9,8 @@ def dhyey(request):
     return HttpResponse("hello! dhyey")
 
 def greet(request, name):
-    return HttpResponse("hello {name}!")
+    
+    context = {
+        "name": name
+    }
+    return render(request, "hello/greet.html")
