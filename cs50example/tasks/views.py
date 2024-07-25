@@ -26,7 +26,8 @@ def add(request):
     if request.method == "POST":
         form = NewTaskForm(request.POST)
         if form.is_valid():
-            form.cleaned_data["tasks"] += ["tasks"]
+            task = form.cleaned_data["tasks"]
+            form.cleaned_data["tasks"] += [task]
             return HttpResponseRedirect(reverse("index"))
             
         else:
