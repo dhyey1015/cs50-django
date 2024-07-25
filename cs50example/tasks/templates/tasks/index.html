@@ -1,4 +1,4 @@
-{% extends "task/layout.html" %}
+{% extends "tasks/layout.html" %}
 
 {%block body%}
         <h1>Tasks</h1>
@@ -7,5 +7,6 @@
             <li>{{ tasks }}</li>
             {% endfor%}
         </lu>
+    <a herf = "{% url 'add' %}">Add a new task</a>
 
 {%endblock%}
