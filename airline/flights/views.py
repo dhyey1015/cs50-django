@@ -4,8 +4,6 @@ from .models import Flight
 # Create your views here.
 
 def index(request):
-    
-    context = {
+    return render(request,"flights/index.html", {
         "flights" : Flight.objects.all(),
-    }
-    return render(request, "flights/index.html", context)
+    })
