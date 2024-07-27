@@ -22,5 +22,4 @@ urlpatterns = [
     path('hello/', include("hello.urls")),
     path('isitnewyear', include("isitnewyear.urls")),
     path('tasks/', include("tasks.urls")),
-    path('section/', include("singlepage1.urls")),
 ]
