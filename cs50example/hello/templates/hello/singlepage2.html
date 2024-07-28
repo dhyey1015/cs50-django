@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Single Page</title>
+        <style>
+            div{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Helloooo!</h1>
+        <button data-section="1">section1</button> 
+        <button data-section="2">section2</button> 
+        <button data-section="3">section3</button> 
+        <div id="content">
+        </div>
+        <script>
+
+            window.onpopstate = function(event){
+                //console.log(event.state.section)
+                showSection(event.state.section)
+            }
+            function showSection(section){
+                fetch(`/hello/sections/${section}`)
+                .then(response => response.text())
+                .then(text => {
+                    console.log(text);
+                    document.querySelector("#content").innerHTML= text;
+                });
+            }
+            
+            document.addEventListener("DOMContentLoaded",function(){
+                document.querySelectorAll('button').forEach(button =>{
+                    button.onclick = function(){
+                        const section = this.dataset.section;
+                        history.pushState({section: section},"",`section${section}`)
+                        showSection(this.dataset.section);
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>
