@@ -13,8 +13,7 @@ def greet(request, name):
         "name": name
     }
     return render(request, "hello/greet.html",context)
-
-#singel-page all infromation
+#userinterface lectures----------------------------------------------------
 
 texts = ["page1beuwinjokl;A", "page2BFUNIEWOMKL,Q", "page3eubinjkwclm"]
 

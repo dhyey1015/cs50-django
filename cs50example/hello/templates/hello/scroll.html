@@ -7,17 +7,17 @@
         <h1>Hello world!</h1>
 
         <script>
-            window.onscroll = () =>{
-                if((window.innerHeight + window.scrollY) document.body.offsetHeight){
+            window.onscroll = () => {
+                if(window.innerHeight + window.scrollY >= document.body.offsetHeight){
                     document.querySelector('body').style.background = 'green';
                 else{
                     document.querySelector('body').style.background = 'white';
                 }
             }
 
-            }
+        }
+        
         </script>
-
         <p>1</p>
         <p>2</p>
         <p>3</p>
