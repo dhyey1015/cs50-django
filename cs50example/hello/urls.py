@@ -12,6 +12,9 @@ urlpatterns = [
     path("singlepage2", views.singlepage2, name="singlepage2"),
     path("sections/<int:num>", views.section, name= "sections"),
     path("section/<int:num1>", views.section, name='section'),
-    path("scroll", views.scroll, name="scroll")
+    path("scroll", views.scroll, name="scroll"),
+    path("hscroll", views.hscroll, name= "hscroll"),
+    path("posts", views.posts, name ="posts"),
+    path("hide", views.hide, name="hide"),
     
 ]

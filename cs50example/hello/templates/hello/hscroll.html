@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Hello!</title>
+    </head>
+
+    <script>
+
+        // start with 1 post (keeps track of number of posts loaded)
+        let counter = 1;
+        // load posts 20 initially if not mentioned
+        const quantity = 20;
+
+        document.addEventListener("DOMContentLoaded", load);
+
+        window.onscroll = ()=>{
+            if(window.innerHeight + window.scrollY >= document.body.offsetHeight){
+                load();
+            }
+        }
+
+        function load(){
+
+            // setting start and end points and setting the counter
+            const start = counter;
+            const end = start + quantity - 1;
+            counter = end + 1; 
+
+            //getting the data and add posts on Page
+            fetch(`/posts?start=${start}&end=${end}`)
+            .then(response => response.json())
+            .then(data => {
+                data.posts.forEach(add_post);
+            })
+        }
+
+            function add_post(contents){
+                const post = document.querySelector('div');
+                post.className = 'post';
+                post.innerHTML = contents;
+
+                document.querySelector("#posts").append(post);
+            }
+
+        
+    </script>
+    <body>
+       <div class= "bpost"id = "posts">
+       </div>
+    </body>
+</html>

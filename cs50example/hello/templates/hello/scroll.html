@@ -1,4 +1,4 @@
-<!DOCKTYPE html>
+<!DOCTYPE html>
 <html lang = "en">
     <head>
         <title>Hello!</title>
@@ -7,16 +7,17 @@
         <h1>Hello world!</h1>
 
         <script>
-            window.onscroll = () => {
+            
+            document.addEventListener("DOMContentLoaded", window.onscroll = () => {
                 if(window.innerHeight + window.scrollY >= document.body.offsetHeight){
                     document.querySelector('body').style.background = 'green';
+                }
                 else{
                     document.querySelector('body').style.background = 'white';
                 }
-            }
+            
 
-        }
-        
+        })
         </script>
         <p>1</p>
         <p>2</p>

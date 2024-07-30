@@ -11,8 +11,6 @@
     <body>
         <script>
             function showsection(section){
-
-
                 fetch(`/hello/sections/${section}`)
                 .then(response => response.text())
                 .then(text => {
